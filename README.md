@@ -1,29 +1,36 @@
-IA-2_SteerBehavior
+# Steering Behaviors
+## About The Project
+It's based on a project of Mat Buckland : *"Steering Behaviors"*.  
 
-Projet basé sur le chapitre 3 du livre de Mat Buckland "Programming Game AI by Example" (http://www.ai-junkie.com/books/toc_pgaibe.html).
+My goal was to simulate two crowd movements with the same code base : Follow and Protect a leader Agent.  
 
+I've designed three types of agent, each with its own color:
+- In red, the mouse-driven leader (class `Leader`).
+- In blue, the leader's bodyguard, who maintains a safe distance from the other agents (class `ProtectAgent`).
+- In green, the pursuers who follow the leader's every move and try to hit him (class `PursuitAgent`).
 
-Ajout effectué :
+![Steering Behavior](assets/1-steering-behavior.png)
 
-- Le projet a des méthodes (CreateWithPursuitAgent, CreateLeaderPlayerWithAgent) pour créer la situation du leader 
-avec des agents poursuite (PursuitAgent), un leader guidé par un joueur protégé par des agents et poursuivi par d'autres.
+## Getting Started
+### Usage
+After launching the executable, you have access to several options in the menu section (Enabling Obstacles Collision...).  
+![Walls and obstacles enabled](assets/2-steering-behavior-walls.png)
 
-- Chaque type d'agent possède une couleur particulière (Rouge : Leader, Bleu : ProtectAgent, Vert : PursuitAgent).
+I've also created several shortcuts to affect the agent's movements:
+| Shortcuts  | Function                       |
+| ---------- | ------------------------------ |
+| Left Click | Move Leader Agent              |
+| B          | Add Pursuit Agent              |
+| C          | Increase Bodyguard Offset      |
+| V          | Decrease Bodyguard Offset      |
+| X          | Switch to my implementation    |
+| W          | Switch to Mat Buckland program |
 
-- Ajout de menu avec la possibilité de modifier l'offset des agents (augmenter ou diminuer), d'ajouter un agent poursuite 
-et de choisir la situation entre le leader normal et le leader guidé par le joueur. Chaque option à une touche associée.
-Les nouveaux menus sont ajoutés dans les fichiers ressource.h, Script1.rc. Ils sont ajoutés aux méthodes HandleKeyPress 
-et HandleMenuItems
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-- Les fichiers params.ini et ParamLoader.cpp ont été modifiés pour ajouter les données suivantes :
-NumAgentProtectLeader, LeaderScale, LeaderMaxSpeed, LeaderPlayerMaxSpeed, ProtectLeaderMaxSpeed, OffsetAgent et ChangeOffset.
+## Contact
+- Wesley Petit - [Website](https://wesleypetit.fr/) - wesley.petit.lemoine@gmail.com
 
-- Pour le Leader guidé par le joueur, j'ai ajouté un contrôle des murs pour la position de la souris. Ainsi, le joueur ne peut 
-pas sélectionner les zones extérieures aux murs quand ils sont présents. Sinon le leader se bloque au mur. Cet ajout se fait via 
-la variable m_vPointsWall dans la fonction SetCrossHair du fichier GameWorld.cpp.
-
-
-En cas de problème sur le SDK :
-
-Propriétés de la solution < Général
-Adapter la "Version du Windows SDK" et "Ensemble d'outils de plateforme" aux versions que vous utilisez.
+## Credits
+- [Mat Buckland, *"Programming Game AI by Example"*, Chapter 3](http://www.ai-junkie.com/books/toc_pgaibe.html).
