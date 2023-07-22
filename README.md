@@ -9,12 +9,16 @@ I've designed three types of agent, each with its own color:
 - In blue, the leader's bodyguard, who maintains a safe distance from the other agents (class `ProtectAgent`).
 - In green, the pursuers who follow the leader's every move and try to hit him (class `PursuitAgent`).
 
-![Steering Behavior](assets/1-steering-behavior.png)
+<p align="center">
+  <img src="assets/1-steering-behavior.png" alt="Steering Behavior" />
+</p>
 
 ## Getting Started
 ### Usage
 After launching the executable, you have access to several options in the menu section (Enabling Obstacles Collision...).  
-![Walls and obstacles enabled](assets/2-steering-behavior-walls.png)
+<p align="center">
+  <img src="assets/2-steering-behavior-walls.png" alt="Walls and obstacles enabled" />
+</p>
 
 I've also created several shortcuts to affect the agent's movements:
 | Shortcuts  | Function                       |
